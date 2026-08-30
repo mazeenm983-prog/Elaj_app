@@ -4,8 +4,10 @@ workflows:
     environment:
       flutter: stable
     scripts:
+      - name: Generate Android native files
+        script: flutter create . --platforms=android
       - name: Get flutter packages
-        script: flutter packages get
+        script: flutter pub get
       - name: Build APK
         script: flutter build apk --release
     artifacts:
